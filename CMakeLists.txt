@@ -1,0 +1,34 @@
+cmake_minimum_required(VERSION 3.14)
+project(lab1 LANGUAGES CXX ASM_NASM)
+
+set(CMAKE_ASM_NASM_LINK_EXECUTABLE "ld <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>")
+set(CMAKE_ASM_NASM_OBJECT_FORMAT elf64)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+if(APPLE)
+	string(APPEND CMAKE_ASM_NASM_FLAGS "--prefix _")
+endif(APPLE)
+
+if(WIN32)
+	string(APPEND CMAKE_ASM_NASM_FLAGS "-dWIN32=1")
+endif(WIN32)
+
+add_executable(${PROJECT_NAME}
+	src/main.cpp
+	src/func.asm
+)
+
+add_custom_target(
+	"start-${PROJECT_NAME}"
+	COMMAND
+	"python3"
+	"../vissuite/visualize.py"
+	"${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}"
+	"-i"
+	DEPENDS
+	${PROJECT_NAME}
+	USES_TERMINAL
+)

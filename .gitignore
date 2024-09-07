@@ -1,0 +1,10 @@
+build*/
+.venv/
+__pycache__/
+
+*.o
+*.pyc
+
+*.png
+*.jpg
+*.jpeg
