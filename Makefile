@@ -4,6 +4,7 @@ CMAKE_RELEASE_FLAGS ?=
 NPROCS ?= $(shell nproc)
 CLANG_FORMAT ?= clang-format
 BLACK ?= black
+BLACK_FLAGS ?= -l79
 
 # Use this for overriding Makefile
 -include Makefile.local
@@ -29,8 +30,8 @@ run-debug run-release: run-%: build-%
 
 .PHONY: format
 format:
-	find ./src -iname '.pp' -type f | xargs $(CLANG_FORMAT) -i
-	$(BLACK) -l79 ./vissuite ./config
+	find src -name '*pp' -type f  | xargs $(CLANG_FORMAT) -i
+	$(BLACK) $(BLACK_FLAGS) vissuite
 
 .PHONY: dist-clean
 dist-clean:

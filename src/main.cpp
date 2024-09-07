@@ -1,7 +1,7 @@
-#include <iostream>
 #include <format>
+#include <iostream>
 
-extern "C" float f(float); // NOLINT
+extern "C" float f(float);  // NOLINT
 
 static constexpr float kStart = -1.0f;
 static constexpr float kEnd = 1.0f;
@@ -28,4 +28,3 @@ int main(int argc, char** argv) {
 
   return 0;
 }
-

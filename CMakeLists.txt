@@ -25,7 +25,7 @@ add_custom_target(
 	"start-${PROJECT_NAME}"
 	COMMAND
 	"python3"
-	"../vissuite/visualize.py"
+	"../vissuite/"
 	"${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}"
 	"-i"
 	DEPENDS
