@@ -2,6 +2,8 @@ build*/
 .venv/
 __pycache__/
 
+plot/
+
 *.o
 *.pyc
 

@@ -29,3 +29,8 @@
 ## Vissuite
 
 Для визуализации используется мини-фреймворк vissuite. На вход он принимает путь до исполняемого файла с лабораторной работой, запускает ее, читает данные и строит графики. Функция для эталонного графика берется из файла [config.py](./vissuite/config.py).
+
+## Полезные ссылки
+
+* https://www.laruence.com/sse/# - Список intrinsics от Intel 
+* https://en.wikibooks.org/wiki/X86_Assembly/Floating_Point - гайд по x87 FPU
